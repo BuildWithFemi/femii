@@ -6,7 +6,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   icons: {
-    icon: "/favicon.jpg",
+    icon: [
+      { url: "/favicon.jpg", type: "image/jpeg" },
+    ],
+    shortcut: "/favicon.jpg",
+    apple: "/favicon.jpg",
   },
   title: {
     default: "Olorunfemi Jegede — AI-Engineer",
