@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light mode greyscale (existing palette preserved) */
+  --bg-base:      #e8e8e8;
+  --bg-mid:       #dedede;
+  --bg-deep:      #d2d2d2;
+  --bg-panel:     rgba(0,0,0,0.025);
+  --fg-primary:   #141414;
+  --fg-secondary: #3a3a3a;
+  --fg-muted:     #707070;
+  --fg-ghost:     #a0a0a0;
+  --line:         rgba(0,0,0,0.10);
+  --line-strong:  rgba(0,0,0,0.18);
+  --pill-bg:      rgba(0,0,0,0.04);
+  --pill-border:  rgba(0,0,0,0.14);
+  --card-bg:      rgba(0,0,0,0.025);
+  --card-hover:   rgba(0,0,0,0.04);
+  --noise-opacity: 0.035;
+  --diag-opacity: 0.07;
+  --scroll-track: #e8e8e8;
+  --scroll-thumb: rgba(0,0,0,0.2);
+  --navbar-bg:    232,232,232;
+}
+
+html.dark {
+  --bg-base:      #111111;
+  --bg-mid:       #181818;
+  --bg-deep:      #0d0d0d;
+  --bg-panel:     rgba(255,255,255,0.03);
+  --fg-primary:   #f0f0f0;
+  --fg-secondary: #c8c8c8;
+  --fg-muted:     #888888;
+  --fg-ghost:     #555555;
+  --line:         rgba(255,255,255,0.09);
+  --line-strong:  rgba(255,255,255,0.16);
+  --pill-bg:      rgba(255,255,255,0.05);
+  --pill-border:  rgba(255,255,255,0.12);
+  --card-bg:      rgba(255,255,255,0.03);
+  --card-hover:   rgba(255,255,255,0.06);
+  --noise-opacity: 0.025;
+  --diag-opacity: 0.055;
+  --scroll-track: #111111;
+  --scroll-thumb: rgba(255,255,255,0.15);
+  --navbar-bg:    17,17,17;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  forced-color-adjust: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--fg-primary);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+::selection {
+  background: rgba(128,128,128,0.22);
+  color: var(--fg-primary);
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--scroll-track); }
+::-webkit-scrollbar-thumb { background: var(--scroll-thumb); border-radius: 2px; }
+
+.font-display { font-family: 'Syne', sans-serif; }
+
+/* Grain overlay */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: var(--noise-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Theme transition for all colored elements */
+section, nav, footer, div, h1, h2, h3, h4, p, span, a {
+  transition: background-color 0.4s ease, border-color 0.4s ease, color 0.3s ease;
+}
+
+/* ── Motion & Interactivity Enhancements ─────────────────────────── */
+
+/* Button press tactile feedback */
+button, a[role="button"] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth scale transitions for interactive elements */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.hover-lift:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.15);
+}
+
+/* Link underline animation */
+a.animated-underline {
+  position: relative;
+}
+a.animated-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--fg-primary);
+  transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+a.animated-underline:hover::after {
+  width: 100%;
+}
+
+/* Card glow on focus (accessibility) */
+:focus-visible {
+  outline: 2px solid var(--fg-muted);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* Pill hover micro-interaction */
+span[role="button"], .pill-hover {
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.2s ease;
+}
+span[role="button"]:hover, .pill-hover:hover {
+  transform: scale(1.05);
+}
+
+/* Smooth icon rotation utility */
+.icon-spin-hover:hover svg {
+  transform: rotate(15deg);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Section transitions with will-change for GPU acceleration */
+section {
+  will-change: auto;
+}
