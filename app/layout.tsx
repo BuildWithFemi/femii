@@ -6,7 +6,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   icons: {
-    icon: "/favicon.svg",
+    icon: "/favicon.jpg",
   },
   title: {
     default: "Olorunfemi Jegede — AI-Engineer",
