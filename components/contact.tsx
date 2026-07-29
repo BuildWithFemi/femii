@@ -2,13 +2,22 @@
 
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
-import { Github, Linkedin, Mail, MessageCircle, ArrowUpRight, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail, MessageCircle, ArrowUpRight } from "lucide-react";
+
+/* Modern X (formerly Twitter) icon — matches the hero section */
+function XIcon({ size = 16, style }: { size?: number; style?: React.CSSProperties }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" style={style}>
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+}
 import Link from "next/link";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const socialLinks = [
-  { label: "Twitter / X", handle: "@Buildwithfemi", href: "https://x.com/Buildwithfemi", icon: Twitter },
+  { label: "Twitter / X", handle: "@Buildwithfemi", href: "https://x.com/Buildwithfemi", icon: XIcon },
   { label: "GitHub", handle: "@BuildWithFemi", href: "https://github.com/BuildWithFemi", icon: Github },
   { label: "LinkedIn", handle: "jegede-olorunfemi", href: "https://www.linkedin.com/in/jegede-olorunfemi-98a2a1321", icon: Linkedin },
   { label: "Email", handle: "olorunfemicaleb2@gmail.com", href: "mailto:olorunfemicaleb2@gmail.com", icon: Mail },
