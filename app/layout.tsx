@@ -13,27 +13,27 @@ export const metadata: Metadata = {
     apple: "/favicon.jpg",
   },
   title: {
-    default: "Olorunfemi Jegede — AI-Engineer",
+    default: "Olorunfemi Jegede — ML/AI-Engineer",
     template: "%s | Olorunfemi Jegede",
   },
   description:
-    "Portfolio of Olorunfemi Jegede — AI-engineer building ML piplines,and responsive full stack applications.",
+    "Portfolio of Olorunfemi Jegede — ML/AI-engineer building ML piplines,and responsive full stack applications.",
   keywords: ["AI", "Engineer", "portfolio", "Next.js", "React", "TypeScript"],
   authors: [{ name: "Olorunfemi Jegede" }],
   creator: "Olorunfemi Jegede",
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "Olorunfemi Jegede — AI Engineer",
+    title: "Olorunfemi Jegede — ML/AI Engineer",
     description:
-      "Portfolio of Olorunfemi Jegede — AI-engineer building ML piplines,and responsive full stack applications.",
+      "Portfolio of Olorunfemi Jegede — ML/AI-engineer building ML piplines,and responsive full stack applications.",
     siteName: "Olorunfemi Jegede",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Olorunfemi Jegede — AI Engineer",
+    title: "Olorunfemi Jegede — ML/AI Engineer",
     description:
-      "Portfolio of Olorunfemi Jegede — AI-engineer building ML piplines,and responsive full stack applications.",
+      "Portfolio of Olorunfemi Jegede — ML/AI-engineer building ML piplines,and responsive full stack applications.",
   },
   robots: {
     index: true,

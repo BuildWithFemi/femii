@@ -15,7 +15,7 @@ export function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.65, ease, delay: 0.5 }}
-        className="font-display max-w-2xl text-5xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl"
+        className="font-display max-w-2xl text-5xl font-normal leading-tight tracking-tight sm:text-4xl lg:text-6xl"
         style={{ color: "var(--fg-primary)" }}
       >
         Hey, I&apos;m{" "}
