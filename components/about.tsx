@@ -19,6 +19,12 @@ const slides = [
     caption: "Hackathon winner 🏆",
     dotColor: "bg-yellow-400",
   },
+    {
+    src: "/photos/portrait4.jpg",
+    alt: "Olorunfemi Jegede at GDGoc event",
+    caption: "@ Build with Gemma",
+    dotColor: "bg-blue-400",
+  },
   {
     src: "/photos/portrait3.jpg",
     alt: "Olorunfemi Jegede working",
@@ -30,6 +36,7 @@ const slides = [
 const tags = [
   "AI Engineer",
   "ML Engineer",
+  "Data Scientist ",
   "Full-Stack Dev",
   "Vibe-Coder",
 ];
